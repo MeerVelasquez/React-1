@@ -1,0 +1,17 @@
+.line-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100px;
+    background-color: rgb(230, 220, 220); 
+  }
+  
+  .circle-image {
+    width: 100px; 
+    height: 100px; 
+    border-radius: 50%;
+    border: 2px solid white; 
+    margin-top: 60px; 
+  }
+  

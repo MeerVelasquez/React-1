@@ -1,0 +1,17 @@
+.title {
+    text-align: center;
+  }
+  
+  .title h2 {
+    margin-top: 60px;
+    font-size: 18px; 
+    color: lightgrey;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .title h1 {
+    margin-top: -10px;
+    font-size: 24px; 
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
