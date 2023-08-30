@@ -1,17 +1,20 @@
-import React from 'react';
-import './App.css';
-import Banner from './Banner'; 
-import Titulo from './titulo';
-import LineaIcon from './LineaIcon';
-
+import React, { useState } from "react";
+import Home from "./mix";
+import LineaIcon from "./LineaIcon";
 
 function App() {
+  const [headerText, setHeaderText] = useState("Welcome to my portfolio!");
+  const [infoText, setInfoText] = useState("Click on the icons to find out more about me and my projects");
+
+  const handleIconClick = (newHeaderText, newInfoText) => {
+    setHeaderText(newHeaderText);
+    setInfoText(newInfoText);
+  };
+
   return (
-    <div className="App">
-      {/* Other components */}
-      <Banner imageUrl= "https://randomuser.me/api/portraits/women/18.jpg" />
-       <Titulo/>
-         <LineaIcon/>
+    <div className="app">
+      <Home headerText={headerText} infoText={infoText} />
+      <LineaIcon onIconClick={handleIconClick} />
     </div>
   );
 }
