@@ -50,6 +50,7 @@ function LineaIcon({ onIconClick }) {
 
       console.log(userData);
       onIconClick(userData);
+      console.log('Icon clicked:', icon);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
