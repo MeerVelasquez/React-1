@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import './IconGrid.css';
 import Icon from './IconFila';
@@ -13,12 +12,13 @@ function LineaIcon({ onIconClick }) {
     { name: "telefono.png", text: "My phone is", userDataKey: "phone" },
     { name: "candado.png", text: "My password is", userDataKey: "login.password" },
   ];
+
   const handleIconClick = async (icon) => {
     try {
       const response = await axios.get('https://randomuser.me/api/');
       const user = response.data.results[0];
       let h1Content = '';
-  
+
       switch (icon.userDataKey) {
         case 'name':
           h1Content = user.name.first + ' ' + user.name.last;
@@ -41,25 +41,23 @@ function LineaIcon({ onIconClick }) {
         default:
           h1Content = '';
       }
-  
+
       const userData = {
         text: icon.text,
         h1Content, 
         profilePicture: user.picture.large,
       };
-  
+
       console.log(userData);
       onIconClick(userData);
     } catch (error) {
       console.error('Error fetching user data:', error);
     }
   };
-  
-  
 
   return (
     <div className="icon-grid">
-      {iconNames.map((iconName, index) => (
+      {iconData.map((icon, index) => (
         <Icon
           key={index}
           imageUrl={require(`./icons/${icon.name}`)}
@@ -68,7 +66,6 @@ function LineaIcon({ onIconClick }) {
       ))}
     </div>
   );
-
 }
 
 export default LineaIcon;
