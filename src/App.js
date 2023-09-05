@@ -1,21 +1,20 @@
-import React from 'react';
-import './App.css';
-import Banner from './Banner'; 
-import Titulo from './titulo';
+import React, { useState } from 'react';
+import Home from './mix';
 import LineaIcon from './LineaIcon';
 
-
 function App() {
+  const [userData, setUserData] = useState(null);
+
+  const handleIconClick = (icon) => {
+    setUserData(icon);
+  };
+
   return (
-    <div className="App">
-      {/* Other components */}
-      <Banner imageUrl= "https://randomuser.me/api/portraits/women/18.jpg" />
-       <Titulo/>
-         <LineaIcon/>
+    <div className="app">
+      <Home userData={userData} />
+      <LineaIcon onIconClick={handleIconClick} />
     </div>
   );
 }
 
 export default App;
-
-
